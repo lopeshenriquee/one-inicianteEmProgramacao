@@ -1,6 +1,6 @@
 alert("Boas vindas ao jogo!");
 //let é para declarar variável
-let numeroSecreto = 5;
+let numeroSecreto = parseInt(Math.random() * 10 + 1);
 console.log(numeroSecreto);
 let chute;
 let tentativa = 1;
