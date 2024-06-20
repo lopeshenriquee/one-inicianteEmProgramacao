@@ -15,7 +15,8 @@ exibirTexto('h1', 'Jogo do Número Secreto');
 exibirTexto('p', 'Escolha um número entre 1 e 10');
 
 function verificarChute(){
-    console.log(nSecreto);
+    let chute = document.querySelector('input').value;
+    console.log(chute == nSecreto);
 }
 
 function gerarNumeroAleatorio(){
