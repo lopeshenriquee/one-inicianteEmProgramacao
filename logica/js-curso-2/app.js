@@ -27,6 +27,8 @@ function gerarNumeroAleatorio() {
 function exibirTexto(tag, texto) {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
+    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {reate: 1.3});
+
 }
 
 function exibirMsgInicial(){
