@@ -4,7 +4,8 @@
 // let paragrafo = document.querySelector('p');
 // paragrafo.innerHTML = 'Escolha um número entre 1 e 10';
 
-let nSecreto = gerarNumeroAleatorio()
+let nSecreto = gerarNumeroAleatorio();
+let tentativas = 1;
 
 function exibirTexto(tag, texto) {
     let campo = document.querySelector(tag);
@@ -18,14 +19,17 @@ function verificarChute() {
     let chute = document.querySelector('input').value;
 
     if (chute == nSecreto) {
-        exibirTexto('h1', 'Acertou!')
-        exibirTexto('p', 'Você descobriu o número secreto!')
+        exibirTexto('h1', 'Acertou!');
+        let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
+        let mensagemTentativas = `Você descobriu o número secreto com ${tentativas} ${palavraTentativa}`;
+        exibirTexto('p', mensagemTentativas);
     } else {
         if (chute > nSecreto){
-            exibirTexto('p', 'O número secreto é menor...')
+            exibirTexto('p', 'O número secreto é menor...');
         } else {
-            exibirTexto('p', 'O número secreto é maior...')
+            exibirTexto('p', 'O número secreto é maior...');
         }
+        tentativas++;
     }
 }
 
